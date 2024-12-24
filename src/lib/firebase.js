@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { writable } from 'svelte/store';
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -9,6 +11,24 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+
+// Create a reactive store for auth state
+function createAuthStore() {
+    const { subscribe, set } = writable(auth);
+
+    auth.onAuthStateChanged(user => {
+        set(auth);
+    });
+
+    return {
+        subscribe
+    };
+}
+
+export const authStore = createAuthStore();
 export default app;
