@@ -49,12 +49,12 @@ BoxedRecipe is a modern web application built with SvelteKit and Firebase, allow
 
 ## 📅 Tutorial Series Structure
 
-### ✅ Part 1: Project Setup & Foundation
-- SvelteKit project initialization
-- Firebase project setup
-- Environment configuration
-- Basic project structure
-- Initial deployment setup
+### Part 1: Project Setup & Foundation
+- ✅ SvelteKit project initialization
+- ✅ Firebase project setup
+- ✅ Environment configuration
+- ✅ Basic project structure
+- ✅ Initial deployment setup
 
 ### Part 2: Authentication System
 - ✅ Firebase Authentication setup
